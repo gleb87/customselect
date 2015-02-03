@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Селект</title>
+  <script src='http://code.jquery.com/jquery-latest.js'></script>
+  <link rel="stylesheet" href="customselect.css"/>
+  <script src="customselect.js"></script>
+</head>
+<body>
+
+<div>Последний результат: <span id="result">...</span></div>
+
+
+  <div id="animal-select" class="customselect" style="float:left">
+  <div class="customselect-title">Выберите</div>
+  <ul class="customselect-options">
+    <!-- значение хранится в свойстве data-value -->
+    <li data-value="bird">Птицы</li>
+    <li data-value="fish">Рыбы</li>
+    <li data-value="animal">Звери</li>
+    <li data-value="dino">Динозавры</li>
+    <li data-value="simplest">Одноклеточные</li>
+  </ul>
+</div>
+
+<div id="food-select" class="customselect" style="float:left">
+  <div class="customselect-title">Выберите</div>
+  <ul class="customselect-options">
+    <li data-value="carnivore">Плотоядные</li>
+    <li data-value="herbivore">Травоядные</li>
+    <li data-value="omnivore">Всеядные</li>
+  </ul>
+</div>
+  <p style="clear:left">Some text</p>
+
+<script>
+  // создаём два селекта
+  var animalSelect = new CustomSelect({
+    elem: $('#animal-select'),
+    value: "fish"
+  });
+
+  var foodSelect = new CustomSelect({
+    elem: $('#food-select')
+  });
+
+  // выводим выбранное значение
+  $([animalSelect, foodSelect]).on('select', function (event) {
+    $('#result').html(event.value)
+  });
+
+</script>
+
+</body>
+</html>

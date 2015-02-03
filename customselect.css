@@ -1,0 +1,36 @@
+
+.customselect {
+  
+  margin: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+  
+
+      
+.customselect.opened .customselect-options {
+  display: block; 
+}
+            
+.customselect-title {
+  width: 227px;
+  border: 1px solid lightblue;
+  background: right 0 url(select-button.gif) no-repeat;
+}
+  
+.customselect-options {
+  position: absolute;
+   z-index: 999;
+  display: none;
+  width: 227px;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  border: 1px solid lightblue;
+  border-top: none;    
+  list-style: none;
+}
+
+.customselect-options li:hover {
+  background-color: lightblue;
+}
